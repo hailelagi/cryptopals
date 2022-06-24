@@ -1,5 +1,5 @@
 # matasano
-Guide/self learning enough crytography to be dangerous.
+Guide/self learning basic crypto concepts.
 
 ## Resources
 
