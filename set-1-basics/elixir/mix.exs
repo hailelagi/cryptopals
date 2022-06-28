@@ -1,14 +1,12 @@
 defmodule SetOne.MixProject do
   use Mix.Project
 
-  @source_url "https://github.com/hailelagi/matasano/elixir"
-  @version "0.1.0"
-
+  @source_url "https://github.com/hailelagi/matasano/tree/main/set-1-basics/elixir"
 
   def project do
     [
-      app: :thumbelina,
-      version: @version,
+      app: :set_one,
+      version: "0.1.0",
       elixir: "~> 1.13",
       name: "SetOne",
       source_url: @source_url,
