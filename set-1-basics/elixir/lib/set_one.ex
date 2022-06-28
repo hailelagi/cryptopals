@@ -1,9 +1,29 @@
 defmodule SetOne do
   @moduledoc """
   `SetOne` Basics.
+
+  Always operate on raw bytes, never on encoded strings.
+  Only use hex and base64 for pretty-printing.
   """
 
-  def hex_to_base64(_) do
-    :world
+  @doc """
+    Base64 is binary to text encoding.
+
+    if ascii/utf-8:
+    Base.encode64("Many hands make light work.")
+    ==> "TWFueSBoYW5kcyBtYWtlIGxpZ2h0IHdvcmsu"
+
+    binary -> sequence of 8bit bytes
+    Base.encode64(<<0000000::8>>) == "A"
+  """
+
+  @doc """
+    solution using high level stdlib fns
+  """
+  def hex_to_base64(hex_str) do
+    String.upcase(hex_str)
+    |> Base.decode16!()
+    |> Base.encode64()
   end
+
 end
