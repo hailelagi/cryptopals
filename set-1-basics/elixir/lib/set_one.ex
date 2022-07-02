@@ -16,14 +16,9 @@ defmodule SetOne do
     binary -> sequence of 8bit bytes
     Base.encode64(<<0000000::8>>) == "A"
   """
-
-  @doc """
-    solution using high level stdlib fns
-  """
   def hex_to_base64(hex_str) do
-    String.upcase(hex_str)
-    |> Base.decode16!()
+    hex_str
+    |> Base.decode16!(case: :lower)
     |> Base.encode64()
   end
-
 end
