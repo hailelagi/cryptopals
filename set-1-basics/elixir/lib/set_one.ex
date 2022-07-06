@@ -5,6 +5,7 @@ defmodule SetOne do
   Always operate on raw bytes, never on encoded strings.
   Only use hex and base64 for pretty-printing.
   """
+  import Bitwise
 
   @doc """
     Base64 is binary to text encoding.
@@ -23,16 +24,23 @@ defmodule SetOne do
   end
 
   @doc """
-    BitWise Operators.
-    todo: bit operators,
+    Exclusive OR has the useful ppty, if x and y in a set {0, 1} ^ n
+    and x is a uniform rand var, y is rand (in some distro) then:
+    x (+) y = z(uniform rand var)
+
+    XOR of two bits 0 and 1 is:
+    x (+) y - base 2
   """
   def fixed_xor(buffer_one, buffer_two) do
-    buffer_one = buffer_one |> hex_to_base64() |> Base.hex_decode32()
-    buffer_two = buffer_two |> Base.decode16!(case: :lower)
+    buffer_one = parse_buffer(buffer_one)
+    buffer_two = parse_buffer(buffer_two)
 
-    IO.inspect(buffer_one)
-    # Bitwise.bxor(buffer_one, buffer_two)
+    bxor(buffer_one, buffer_two)
+    |> :binary.encode_unsigned()
+    |> Base.encode16(case: :lower)
   end
+
+  defp parse_buffer(buffer), do: buffer |> :binary.decode_hex() |> :binary.decode_unsigned()
 
   @doc """
     More bit ops what else would you like to be done omg I love these keys shit.
