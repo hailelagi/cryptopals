@@ -14,4 +14,11 @@ defmodule SetOneTest do
 
     assert SetOne.fixed_xor(buffer_one, buffer_two) == "746865206b696420646f6e277420706c6179"
   end
+
+  test "decrypt single-byte xor cipher" do
+    cipher_text = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736"
+
+    # todo: how to test
+    assert "fail" == SetOne.single_byte_xor(cipher_text)
+  end
 end

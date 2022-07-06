@@ -43,10 +43,32 @@ defmodule SetOne do
   defp parse_buffer(buffer), do: buffer |> :binary.decode_hex() |> :binary.decode_unsigned()
 
   @doc """
-    More bit ops what else would you like to be done omg I love these keys shit.
+    key, cipher text, message
+    E(k, m) = C
+    D(k, c) = M
+
+    m = char {a..Z} or special char (?./ etc)
+    k = ?
+    m = cipher_text
+
+    k = m (+) c
+    todo: impl character frequency to "score" dictionary attack.
   """
-  def single_byte_xor do
-    nil
+  def single_byte_xor(cipher_text) do
+    lower_letters = Enum.map(97..122, fn l -> l end)
+    capital_letters = Enum.map(65..90, fn l -> l end)
+
+    for char <- lower_letters do
+      # k = m (+) c
+      possible_key =
+        bxor(char, parse_buffer(cipher_text))
+        |> :binary.encode_unsigned()
+      # todo:
+
+      if fixed_xor(possible_key, <<char::utf8>>) == cipher_text do
+        IO.inspect("bingo #{char}")
+      end
+    end
   end
 
 
