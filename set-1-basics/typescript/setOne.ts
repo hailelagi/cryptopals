@@ -1,8 +1,10 @@
-class SetOne {
-    constructor(parameters) {
+export class setOne {
+    public hexToBase64(hexStr: string): string {
+        return hexStr
     }
 
-    function hexToBase64(params:type) {
-        
+    public fixedXor(bufferOne: string, bufferTwo: string): string {
+        return bufferOne + bufferTwo
     }
+
 }

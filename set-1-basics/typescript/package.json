@@ -1,0 +1,25 @@
+{
+  "name": "set_one",
+  "version": "1.0.0",
+  "description": "",
+  "main": "setOne.ts",
+  "scripts": {
+    "test": "jest setOne.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hailelagi/matasano.git#main"
+  },
+  "author": "haile",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hailelagi/matasano/issues"
+  },
+  "homepage": "https://github.com/hailelagi/matasano/tree/main#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@types/jest": "^28.1.4",
+    "jest": "^28.1.2"
+  }
+}
