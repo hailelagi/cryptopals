@@ -1,0 +1,2 @@
+# Ignore unit test cache
+/__pycache__/
