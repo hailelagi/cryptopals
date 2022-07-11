@@ -6,7 +6,6 @@ fn main() {
     println!("Set one solutions");
 }
 
-// working with strings is hard in rust ugh
 pub fn hex_to_base64(hex_string: &str) -> String {
     print!("{}", hex_string);
     let s = String::new();

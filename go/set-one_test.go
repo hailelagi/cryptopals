@@ -1,9 +1,8 @@
 package set_one
 
 import (
-	"testing"
-
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func testHexToBase64() (t *testing.T) {
