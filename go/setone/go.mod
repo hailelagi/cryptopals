@@ -1,4 +1,4 @@
-module github.com/hailelagi/matasano/set-1-basics/go/set_one
+module setone
 
 go 1.17
 
