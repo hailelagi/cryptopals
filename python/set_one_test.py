@@ -8,12 +8,12 @@ class SetOne(unittest.TestCase):
 
         self.assertEqual(hex_to_base64(input), expected)
 
-    # def test_fixed_xor(self):
-    #     buffer_one = "1c0111001f010100061a024b53535009181c"
-    #     buffer_two = "686974207468652062756c6c277320657965"
-    #     xor_combination = "746865206b696420646f6e277420706c6179"
+    def test_fixed_xor(self):
+        buffer_one = "1c0111001f010100061a024b53535009181c"
+        buffer_two = "686974207468652062756c6c277320657965"
+        xor_combination = "746865206b696420646f6e277420706c6179"
 
-    #     self.assertEqual(fixed_xor(buffer_one, buffer_two), xor_combination)
+        self.assertEqual(fixed_xor(buffer_one, buffer_two), xor_combination)
 
 if __name__ == "__main__":
     unittest.main()
